@@ -158,7 +158,7 @@ try:
 except IndexError:
     print("Revisa la longitud de la lista y la posición del elemento a imprimir.")
 
-'''#17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
+#17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
@@ -179,28 +179,32 @@ while True:
         print("No se puede dividir por cero")
         print("Inténtalo otra vez")
 
-
-
-
-
-'''#18. Handle the exception thrown by the code below by using try and except blocks. 
+18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-f = open('testfile','r')
-f.write('Test write this')
+try: 
+    f = open('testfile','r')
+    f.write('Test write this')
+except FileNotFoundError:
+    print("Archivo no existente. Revisa el nombre.")
+except NameError:
+    print(e)
 
-
-
+#
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
+try:
 fp = open('myfile.txt')
     line = f.readline()
     i = int(s.strip())
-
-
-
+except IndentationError:
+    print("Por favor, revisa la indentación del código")
+except NameError:
+    print(e)
+except FileNotFoundError:
+    print("El archivo o directorio que tratas de abrir no existe, por favor, revisa el nombre.")
 
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
@@ -210,9 +214,12 @@ fp = open('myfile.txt')
 def linux_interaction():
     assert ('linux' in sys.platform), "Function can only run on Linux systems."
     print('Doing something.')
+try:
+    linux_interaction()
+except AssertionError:
+    print("Esta función sólo es válida para los sistemas Linux. Prueba otra función acorde a tu sistema operativo.")
 
-
-# Bonus Questions:
+'''# Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
 
@@ -220,10 +227,29 @@ def linux_interaction():
 # Hint: we need to continually keep checking until we get an integer.
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
+def square():
+    num = input("Dime un número entero para elevar al cuadrado\n")
+    return int(num) ** 2 
+
+incorrectInputsCounter = 0
+
+while True:
+    try:
+        result = square()
+    except ValueError:
+        incorrectInputsCounter += 1
+        print("Debes introducir un número entero")
+        print("Inténtalo otra vez")
+    else:
+        print(f"El cuadrado del número que has elegido es: {result}")
+        print(f"El número de inputs incorrectos es: {incorrectInputsCounter}")
+        break
+ 
+    
 
 
 
-# 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
+'''# 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
 
