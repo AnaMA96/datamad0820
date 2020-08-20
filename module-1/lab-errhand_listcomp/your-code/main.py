@@ -75,10 +75,10 @@ sentence = 'The Quick Brown Fox Jumped Over The Lazy Dog'
 
 capital_letters = [i for i in sentence if i >= "A" and i <= "Z"]
 
-print(capital_letters)'''
+print(capital_letters)
 
 
-'''#9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
+#9. Find all the consonants in the sentence 'The quick brown fox jumped over the lazy dog'.
 # Use consonants as the name of the list.
 # Remember to use list comprehensions and to print your results.
 
@@ -86,14 +86,11 @@ sentence = 'The quick brown fox jumped over the lazy dog'
 consonants = ["".join([i for i in sentence if i not in "aeiouAEIOU"])]
 print(consonants)
 
-
-
-
 #10. Find the folders you have in your madrid-oct-2018 local repo. Use files as name of the list.  
 # You will probably need to import os library and some of its modules. You will need to make some online research.
 # Remember to use list comprehensions and to print your results.
 
-files = [f for f in os.listdir("/Users/ana/datamad0820")]
+files = [i for i in os.listdir("/Users/ana/datamad0820") if os.path.isdir(os.path.join("/Users/ana/datamad0820",i))]
 
 print(files)
 
@@ -107,12 +104,14 @@ import random
 random_lists = [random.sample(range(0,100),10) for i in list(range(4))]
 print(random_lists)
 
-'''#12. Flatten the following list of lists. Use flatten_list as the name of the output.
+#12. Flatten the following list of lists. Use flatten_list as the name of the output.
 # Remember to use list comprehensions and to print your results
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
 
+flatten = [i for sublist in list_of_lists for i in sublist]
 
+print(flatten)
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
 # Remember to use list comprehensions and to print your results.
@@ -121,15 +120,21 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
+floats = [float(i) for sublist in list_of_lists for i in sublist]
 
-
+print(floats)
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
+try:
+    for i in ['a','b','c']:
+        print(i**2)
+except Exception as e:
+    print("Algo ha fallado:")
+    print(e)
+    print("Intentalo otra vez")
 
-for i in ['a','b','c']:
-    print i**2
-
+#Parenthesis of i**2 missing. Fix it so the exercise can be realized.
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
@@ -137,27 +142,48 @@ for i in ['a','b','c']:
 
 x = 5
 y = 0
-
-z = x/y
-
-
-
+try:
+    z = x/y
+except ZeroDivisionError:
+    print("No puedes dividir un número por cero, revisa la operación.")
+finally:
+    print("All done")
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
 abc=[10,20,20]
-print(abc[3])
+try:
+    print(abc[3])
+except IndexError:
+    print("Revisa la longitud de la lista y la posición del elemento a imprimir.")
 
-
-#17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
+'''#17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
+def divide():
+    numerator = input("Dime un número como numerador\n")
+    denominator= input("Dime un número como denominador\n")
+    result = int(numerator)/ int(denominator)
+    print(f" {result}")
+
+while True:
+    try:
+        divide()
+        break
+    except ValueError:
+        print("Numerador y denominador deben ser int o float")
+        print("Inténtalo otra vez")
+    except ZeroDivisionError:
+        print("No se puede dividir por cero")
+        print("Inténtalo otra vez")
 
 
 
-#18. Handle the exception thrown by the code below by using try and except blocks. 
+
+
+'''#18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
 f = open('testfile','r')
