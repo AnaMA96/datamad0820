@@ -1,17 +1,17 @@
 #Example: 
 
-'''eggs = (1,3,8,3,2)
+eggs = (1,3,8,3,2)
 
 my_listComprehension = [1/egg for egg in eggs]
 
 print(my_listComprehension)
 
-'''#Insert here the module/library import statements 
+#Insert here the module/library import statements 
 
 import math
 import os, sys
 
-'''#1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
+#1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
 square = [i **2 for i in range(20)]
 
@@ -46,14 +46,14 @@ print(my_list)
 #5. Find the odd numbers from 1-100. Use odds as the name of the list. 
 # Remember to use list comprehensions and to print your results
 
-odds = [i for i in range( 1,100) if i % 2 != 0 ]
+odds = [i for i in range( 1,101) if i % 2 != 0 ]
 
 print(odds)
 
 
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
-divisible_by_seven = [i for i in range( 1,1000) if i % 7 == 0 ]
+divisible_by_seven = [i for i in range( 1,1001) if i % 7 == 0 ]
 print(divisible_by_seven)
 
 
@@ -101,7 +101,7 @@ print(files)
 # Remember to use list comprehensions and to print your results
 
 import random
-random_lists = [random.sample(range(0,100),10) for i in list(range(4))]
+random_lists = [random.sample(range(0,101),10) for i in list(range(4))]
 print(random_lists)
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
@@ -130,9 +130,9 @@ try:
     for i in ['a','b','c']:
         print(i**2)
 except Exception as e:
-    print("Algo ha fallado:")
+    print("Something went wrong:")
     print(e)
-    print("Intentalo otra vez")
+    print("Try again")
 
 #Parenthesis of i**2 missing. Fix it so the exercise can be realized.
 
@@ -145,7 +145,7 @@ y = 0
 try:
     z = x/y
 except ZeroDivisionError:
-    print("No puedes dividir un número por cero, revisa la operación.")
+    print("It can't be divided by 0, check the operation.")
 finally:
     print("All done")
 
@@ -156,15 +156,15 @@ abc=[10,20,20]
 try:
     print(abc[3])
 except IndexError:
-    print("Revisa la longitud de la lista y la posición del elemento a imprimir.")
+    print("Check the list length and the element position to print")
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
 def divide():
-    numerator = input("Dime un número como numerador\n")
-    denominator= input("Dime un número como denominador\n")
+    numerator = input("Introduce a number as a numerator\n")
+    denominator= input("Introduce a number as a denominator\n")
     result = int(numerator)/ int(denominator)
     print(f" {result}")
 
@@ -173,38 +173,36 @@ while True:
         divide()
         break
     except ValueError:
-        print("Numerador y denominador deben ser int o float")
-        print("Inténtalo otra vez")
+        print("Numerator and denominator must be int or float")
+        print("Try again")
     except ZeroDivisionError:
-        print("No se puede dividir por cero")
-        print("Inténtalo otra vez")
+        print("It can't be divided by zero")
+        print("Try again")
 
-18. Handle the exception thrown by the code below by using try and except blocks. 
+#18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
 try: 
     f = open('testfile','r')
     f.write('Test write this')
 except FileNotFoundError:
-    print("Archivo no existente. Revisa el nombre.")
+    print("There is not such file, check the name.")
 except NameError:
     print(e)
-
-#
 
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
 try:
-fp = open('myfile.txt')
+    fp = open('myfile.txt')
     line = f.readline()
     i = int(s.strip())
 except IndentationError:
-    print("Por favor, revisa la indentación del código")
+    print("Please, check the code indentation")
 except NameError:
     print(e)
 except FileNotFoundError:
-    print("El archivo o directorio que tratas de abrir no existe, por favor, revisa el nombre.")
+    print("File or directory not found, please, check the name.")
 
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
@@ -217,9 +215,9 @@ def linux_interaction():
 try:
     linux_interaction()
 except AssertionError:
-    print("Esta función sólo es válida para los sistemas Linux. Prueba otra función acorde a tu sistema operativo.")
+    print("This function is only available for Linux operating systems. Try another function available for your operating system.")
 
-'''# Bonus Questions:
+# Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
 
@@ -228,7 +226,7 @@ except AssertionError:
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
 def square():
-    num = input("Dime un número entero para elevar al cuadrado\n")
+    num = input("Give me a number to square\n")
     return int(num) ** 2 
 
 incorrectInputsCounter = 0
@@ -238,28 +236,45 @@ while True:
         result = square()
     except ValueError:
         incorrectInputsCounter += 1
-        print("Debes introducir un número entero")
-        print("Inténtalo otra vez")
+        print("Number must be an integer")
+        print("Try again")
     else:
-        print(f"El cuadrado del número que has elegido es: {result}")
-        print(f"El número de inputs incorrectos es: {incorrectInputsCounter}")
+        print(f"The number square is: {result}")
+        print(f"The number of incorrect inputs is: {incorrectInputsCounter}")
         break
  
     
-
-
-
-'''# 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
+# 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
 
+def divide_by_one_in (num):
+    for i in range(2, 10):
+        if num % i == 0:
+            return True
+    return False
 
+results = [i for i in range(1,1001) if divide_by_one_in (i)]
 
+print(results)
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
-Num_of_Sections = int(input("Enter Num of Sections: "))'''
+class NotLessThanTwoError (Exception):
+    """Raised when the input value is too small"""
+    pass
+
+while True:
+    try:
+        Total_Marks = int(input("Enter Total Marks Scored: ")) 
+        Num_of_Sections = int(input("Enter Num of Sections: "))
+        if Num_of_Sections < 2:
+            raise NotLessThanTwoError
+        break
+    except NotLessThanTwoError:
+        print("Number of sections can't be less than 2")
+    except ValueError:
+        print("Number must be int o float")
 
 
