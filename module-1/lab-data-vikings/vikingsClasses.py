@@ -123,7 +123,7 @@ while True:
     
 attributes = input("Do you want to choose (introducing the number) the soldiers' health and strengh? (y/N)")
 
-if attributes[0] == "y" or "Y":
+if attributes[0] == "y" or attributes[0] == "Y":
     for s in range(0,saxonsNumber):
         print(f"soldier number {s}")
         while True:
@@ -140,7 +140,7 @@ if attributes[0] == "y" or "Y":
                 print("The input must be an integer.Please try again.")
         saxon = Saxon(saxonHealth, saxonStrength)
         war.addSaxon(saxon)
-elif attributes[0] == "n" or "N":
+elif attributes[0] == "n" or attributes[0] == "N":
     for s in range(0,saxonsNumber):
         saxon = Saxon(random.randint(1,100), random.randint(1,100))
         war.addSaxon(saxon)
