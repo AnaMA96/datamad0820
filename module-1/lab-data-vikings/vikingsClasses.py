@@ -105,10 +105,11 @@ class War:
 
 #Battle
 class InvalidValueError(Exception):
-    '''Introduced number out of range (1,100)'''
+    '''Wrong input answers. Please check the instructions.'''
     pass
 def checkInvalidValueError(value):
     return value > 0 and value <= 100
+
         
 
 war = War()
@@ -121,30 +122,37 @@ while True:
     except ValueError:
         print("The input must be an integer.Please try again.")
     
-attributes = input("Do you want to choose (introducing the number) the soldiers' health and strengh? (y/N)")
+while True:
+    try:
+        attributes = input("Do you want to choose (introducing the number) the soldiers' health and strength? (y/N)")
+        if attributes[0] == "y" or attributes[0] == "Y":
+            for s in range(0,saxonsNumber):
+                print(f"soldier number {s}")
+                while True:
+                    try:
+                        saxonHealth = int(input("Introduce the soldier's health choosing a number (1-100):"))
+                        saxonStrength = int(input("Introduce the soldier's strength choosing a number (1-100):"))
+                        if checkInvalidValueError(saxonHealth) == False or checkInvalidValueError(saxonStrength) == False:
+                            raise InvalidValueError
 
-if attributes[0] == "y" or attributes[0] == "Y":
-    for s in range(0,saxonsNumber):
-        print(f"soldier number {s}")
-        while True:
-            try:
-                saxonHealth = int(input("Introduce the soldier's health choosing a number (1-100):"))
-                saxonStrength = int(input("Introduce the soldier's strength choosing a number (1-100):"))
-                if checkInvalidValueError(saxonHealth) == False or checkInvalidValueError(saxonStrength) == False:
-                    raise InvalidValueError
-
-                break
-            except InvalidValueError:
-                print("Please introduce a number between 1 and 100")
-            except ValueError:
-                print("The input must be an integer.Please try again.")
-        saxon = Saxon(saxonHealth, saxonStrength)
-        war.addSaxon(saxon)
-elif attributes[0] == "n" or attributes[0] == "N":
-    for s in range(0,saxonsNumber):
-        saxon = Saxon(random.randint(1,100), random.randint(1,100))
-        war.addSaxon(saxon)
-
+                        break
+                    except InvalidValueError:
+                        print("Please introduce a number between 1 and 100")
+                    except ValueError:
+                        print("The input must be an integer.Please try again.")
+            
+                    saxon = Saxon(saxonHealth, saxonStrength)
+                    war.addSaxon(saxon)
+            break
+        elif attributes[0] == "n" or attributes[0] == "N":
+            for s in range(0,saxonsNumber):
+                saxon = Saxon(random.randint(1,100), random.randint(1,100))
+                war.addSaxon(saxon)
+            break
+        else:
+            raise InvalidValueError
+    except InvalidValueError:
+        print("Wrong input answer, please check the instructions")
 
 while True:
     try:
@@ -152,13 +160,39 @@ while True:
         break
     except ValueError:
         print("The input must be an integer.Please try again.")
+while True:
+    try:
+        attributes = input("Do you want to choose (introducing the number) the soldiers' name, health and strength? (y/N)")
+        if attributes[0] == "y" or attributes[0] == "Y":
+            for v in range(0,vikingsNumber):
+                print(f"soldier number {v}")
+                while True:
+                    try:
+                        vikingName = input("Introduce the soldier's name:")
+                        vikingHealth = int(input("Introduce the soldier's health choosing a number (1-100):"))
+                        vikingStrength = int(input("Introduce the soldier's strength choosing a number (1-100):"))
+                        if checkInvalidValueError(vikingHealth) == False or checkInvalidValueError(vikingStrength) == False:
+                            raise InvalidValueError
 
+                        break
+                    except InvalidValueError:
+                        print("Please introduce a number between 1 and 100")
+                    except ValueError:
+                        print("The input must be an integer.Please try again.")
+                viking = Viking(vikingName, vikingHealth, vikingStrength)
+                war.addViking(viking)
+            break
+        elif attributes[0] == "n" or attributes[0] == "N":
+            for v in range(0,vikingsNumber):
+                viking = Viking (f"Viking {v}", random.randint(1,100), random.randint(1,100))
+                war.addViking(viking)
+            break
+        else:
+            raise InvalidValueError
+    except InvalidValueError:
+        print("Wrong input answer, please check the instructions")
 
-for v in range(0, vikingsNumber):
-  viking = Viking("Viking " + str(v), random.randint(1,100), random.randint(0,100))
-  war.addViking(viking)
-
-
+print()
 
 while len(war.saxonArmy) != 0 and len(war.vikingArmy) != 0 :
   try:
