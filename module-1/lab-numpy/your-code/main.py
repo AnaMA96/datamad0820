@@ -15,12 +15,18 @@ print(np.version.version)
 a = np.random.random((2,3,5))
 a
 print()
+
+'''Another way to generate a random array: '''
 a1 = np.random.rand(2, 3, 5)
 a1
 print()
+
+'''Another way to generate a random array: '''
+
 a2 = np.random.sample((2, 3, 5))
 a2
 
+print ()
 
 #4. Print a.
 
@@ -34,11 +40,12 @@ print()
 
 b = np.ones((5, 2, 3))
 
-
+print ()
 #6. Print b.
 
 print(b)
 
+print()
 #7. Do a and b have the same size? How do you prove that in Python code?
 
 if a.size == b.size:
@@ -46,14 +53,17 @@ if a.size == b.size:
 else:
     print("a and b don't have the same size.")
 
+print()
 #8. Are you able to add a and b? Why or why not?
 print("No, we are not able to add a and be because they have different shapes: ValueError: operands could not be broadcast together with shapes (2,3,5) (5,2,3)")
 
+print()
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
 c = np.transpose(b,(1, 2, 0))
 print(c)
 
+print()
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
 d = np.add(a,c)
@@ -61,24 +71,26 @@ print(d)
 
 print("As we saw before, the problem was the shape. Now both variables have the same shape, so we can add them.")
 
+print()
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 print (a)
 print(d)
 
 print("It had added elements with the same index on each array")
 
+print ()
 #12. Multiply a and c. Assign the result to e.
 e = a * c
 print(e)
 
-
+print ()
 #13. Does e equal to a? Why or why not?
 
 if np.array_equal(e, a):
     print("e and a have the same shape and elements.")
     
 
-
+print ()
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
 d_max = np.max(d)
@@ -88,10 +100,11 @@ print("The minimum of d is: ", d_min)
 d_mean = np.mean(d)
 print("The mean of d is :", d_mean)
 
+print()
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 f = np.empty([2, 3, 5])
 
-
+print()
 '''#16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
 If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
 If a value equals to d_mean, assign 50 to the corresponding value in f.
@@ -116,7 +129,7 @@ for x in range(f.shape[0]):
 
 
 
-
+print()
 """
 #17. Print d and f. Do you have your expected f?
 For instance, if your d is:
@@ -141,6 +154,7 @@ print(d)
 print()
 print(f)
 
+print()
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
 ("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
