@@ -13,7 +13,7 @@
 9. sort: {"ipo":-1}
 10. sort: {"number_of_employees":-1}, limit= 10
 11. {"founded_month":{$gt:6}}}, limit= 1000
-12. {$and: [ {"founded_year":{$lt:2000}}, {"acquisition.price_amount":{$lt:10000000}}}
+12. {$and: [ {"founded_year":{$lt:2000}}, {"acquisition.price_amount":{$lt:10000000}}]}
 13. {$and: [ {"acquisition.acquired_year":{$gt:2010}}]}, project: {name:1, acquisition:1}, sort: {"acquisition.price_amount":1}
 14. {"name":1, "founded_year":1}, {"founded_year":1}
 15. {"founded_day":{$lt:7}}, sort: {"acquisition.price_amount":-1}, limit=10
