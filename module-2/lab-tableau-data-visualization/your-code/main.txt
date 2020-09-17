@@ -1,0 +1,9 @@
+1. bar char: https://public.tableau.com/profile/ana2072#!/vizhome/BARCHART_16003542777510/Hoja1?publish=yes
+2.pie chart: https://public.tableau.com/profile/ana2072#!/vizhome/piechart_16003540234080/Hoja2?publish=yes
+3.accumulated: https://public.tableau.com/profile/ana2072#!/vizhome/sidebysidechart_16003552984600/Hoja3?publish=yes
+4.scatter-plot: https://public.tableau.com/profile/ana2072#!/vizhome/scatter-plot_16003560855460/Hoja4?publish=yes
+5. Tabla: https://public.tableau.com/profile/ana2072#!/vizhome/tabla_16003567911050/Hoja5?publish=yes
+6.Tree map: https://public.tableau.com/profile/ana2072#!/vizhome/treemap_16003574008140/Hoja52?publish=yes
+7.Horizontal bar chart: https://public.tableau.com/profile/ana2072#!/vizhome/horizontalbarchart_16003577693950/Hoja6?publish=yes
+8. box and whiskers: https://public.tableau.com/profile/ana2072#!/vizhome/boxandwhiskersplot_16003581294820/Hoja8?publish=yes
+9. **DASHBOARD**: https://public.tableau.com/profile/ana2072#!/vizhome/Dashboard_16003586823550/Dashboard1?publish=yes
