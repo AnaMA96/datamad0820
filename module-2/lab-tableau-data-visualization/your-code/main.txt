@@ -7,3 +7,4 @@
 7.Horizontal bar chart: https://public.tableau.com/profile/ana2072#!/vizhome/horizontalbarchart_16003577693950/Hoja6?publish=yes
 8. box and whiskers: https://public.tableau.com/profile/ana2072#!/vizhome/boxandwhiskersplot_16003581294820/Hoja8?publish=yes
 9. **DASHBOARD**: https://public.tableau.com/profile/ana2072#!/vizhome/Dashboard_16003586823550/Dashboard1?publish=yes
+10. BONUS DASHBOARD: https://public.tableau.com/profile/ana2072#!/vizhome/BONUS_16003596547700/Dashboard1?publish=yes
